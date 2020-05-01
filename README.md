@@ -4,6 +4,8 @@ This repository hots a samll benchmark based on a `TTree` reading (only) of 720k
 in order to compare performances of [go-hep](https://go-hep.org/) and [ROOT](https://root.cern.ch/).
 In this test 42 branches are loaded.
 
+---
+
 **Result** (01/05/2020)
 ```
 go-hep: 5.2 ms/kEvt (3.7 s for 720 kEvts)
