@@ -16,15 +16,12 @@ void event_loop(TString fname="/home/rmadar/cernbox/ATLAS/Analysis/SM-SpinCorr/d
   TTree *tin = (TTree*) fin->Get(tname);
   tin->SetBranchStatus("*", 0);
 
+
   tin->SetBranchStatus("eventNumber", 1);
   tin->SetBranchStatus("runNumber", 1); 
   tin->SetBranchStatus("mcChannelNumber", 1); 
-  
-  // Weights informations
   tin->SetBranchStatus("weight_mc", 1); 
   tin->SetBranchStatus("weight_pileup", 1); 
-  
-  // Top/Anti-top quark
   tin->SetBranchStatus("d_t_beforeFSR_pt", 1); 
   tin->SetBranchStatus("d_t_beforeFSR_eta", 1); 
   tin->SetBranchStatus("d_t_beforeFSR_phi", 1); 
@@ -33,8 +30,6 @@ void event_loop(TString fname="/home/rmadar/cernbox/ATLAS/Analysis/SM-SpinCorr/d
   tin->SetBranchStatus("d_tbar_beforeFSR_eta", 1); 
   tin->SetBranchStatus("d_tbar_beforeFSR_phi", 1); 
   tin->SetBranchStatus("d_tbar_beforeFSR_m", 1); 
-  
-  // b-quarks
   tin->SetBranchStatus("d_b_pt", 1); 
   tin->SetBranchStatus("d_b_eta", 1); 
   tin->SetBranchStatus("d_b_phi", 1); 
@@ -43,8 +38,6 @@ void event_loop(TString fname="/home/rmadar/cernbox/ATLAS/Analysis/SM-SpinCorr/d
   tin->SetBranchStatus("d_bbar_eta", 1); 
   tin->SetBranchStatus("d_bbar_phi", 1); 
   tin->SetBranchStatus("d_bbar_m", 1); 
-  
-  // W-bosons
   tin->SetBranchStatus("d_wplus_pt", 1); 
   tin->SetBranchStatus("d_wplus_eta", 1); 
   tin->SetBranchStatus("d_wplus_phi", 1); 
@@ -53,16 +46,12 @@ void event_loop(TString fname="/home/rmadar/cernbox/ATLAS/Analysis/SM-SpinCorr/d
   tin->SetBranchStatus("d_wminus_eta", 1); 
   tin->SetBranchStatus("d_wminus_phi", 1); 
   tin->SetBranchStatus("d_wminus_m", 1); 
-  
-  // Leptons/Anti-lepton
   tin->SetBranchStatus("d_l_pt", 1); 
   tin->SetBranchStatus("d_l_eta", 1); 
   tin->SetBranchStatus("d_l_phi", 1); 
   tin->SetBranchStatus("d_lbar_pt", 1); 
   tin->SetBranchStatus("d_lbar_eta", 1); 
   tin->SetBranchStatus("d_lbar_phi", 1); 
-  
-  // Neutrinos/Anti-neutrino
   tin->SetBranchStatus("d_nu_pt", 1); 
   tin->SetBranchStatus("d_nu_eta", 1); 
   tin->SetBranchStatus("d_nu_phi", 1); 
@@ -89,6 +78,6 @@ void event_loop(TString fname="/home/rmadar/cernbox/ATLAS/Analysis/SM-SpinCorr/d
   cout.precision(2);
   cout << dt*1000/(Nentries/1000.)  <<  " ms/kEvt (" << dt << " s for ";
   cout.precision(3);
-  cout << Nentries/1000. << "kEvts)" << endl;
+  cout << Nentries/1000. << " kEvts)" << endl;
   
 }
