@@ -15,9 +15,9 @@ struct EventWeight {
 
 // Information about the events
 struct EventInfo {
-	int64_t EvtNum;
-	int32_t RunNum;
-	int32_t Dsid;
+	ULong64_t EvtNum;
+	UInt_t RunNum;
+	UInt_t Dsid;
 };
 
 // Truth particle definition
@@ -47,8 +47,6 @@ struct Event {
 };
 
 
-
-
 void event_loop(TString fname="/home/rmadar/cernbox/ATLAS/Analysis/SM-SpinCorr/data/inputs/root-files/MC16a.410472.PhPy8EG.DAOD_TOPQ1_truth.root",
 		TString tname="truth"){
 
@@ -58,7 +56,50 @@ void event_loop(TString fname="/home/rmadar/cernbox/ATLAS/Analysis/SM-SpinCorr/d
   TFile *fin = TFile::Open(fname);
   TTree *tin = (TTree*) fin->Get(tname);
   tin->SetBranchStatus("*", 0);
-
+  tin->SetBranchStatus("eventNumber", 1); 
+  tin->SetBranchStatus("runNumber", 1); 
+  tin->SetBranchStatus("mcChannelNumber", 1); 
+  tin->SetBranchStatus("weight_mc", 1); 
+  tin->SetBranchStatus("weight_pileup", 1); 
+  tin->SetBranchStatus("d_t_beforeFSR_pt", 1); 
+  tin->SetBranchStatus("d_t_beforeFSR_eta", 1); 
+  tin->SetBranchStatus("d_t_beforeFSR_phi", 1); 
+  tin->SetBranchStatus("d_t_beforeFSR_m", 1); 
+  tin->SetBranchStatus("d_tbar_beforeFSR_pt", 1); 
+  tin->SetBranchStatus("d_tbar_beforeFSR_eta", 1); 
+  tin->SetBranchStatus("d_tbar_beforeFSR_phi", 1); 
+  tin->SetBranchStatus("d_tbar_beforeFSR_m", 1); 
+  tin->SetBranchStatus("d_b_pt", 1);  
+  tin->SetBranchStatus("d_b_eta", 1); 
+  tin->SetBranchStatus("d_b_phi", 1); 
+  tin->SetBranchStatus("d_b_m", 1);   
+  tin->SetBranchStatus("d_bbar_pt", 1);  
+  tin->SetBranchStatus("d_bbar_eta", 1); 
+  tin->SetBranchStatus("d_bbar_phi", 1); 
+  tin->SetBranchStatus("d_bbar_m", 1);   
+  tin->SetBranchStatus("d_wplus_pt", 1);  
+  tin->SetBranchStatus("d_wplus_eta", 1); 
+  tin->SetBranchStatus("d_wplus_phi", 1); 
+  tin->SetBranchStatus("d_wplus_m", 1);   
+  tin->SetBranchStatus("d_wminus_pt", 1);  
+  tin->SetBranchStatus("d_wminus_eta", 1); 
+  tin->SetBranchStatus("d_wminus_phi", 1); 
+  tin->SetBranchStatus("d_wminus_m", 1);   
+  tin->SetBranchStatus("d_l_pt", 1);  
+  tin->SetBranchStatus("d_l_eta", 1); 
+  tin->SetBranchStatus("d_l_phi", 1); 
+  tin->SetBranchStatus("d_lbar_pt", 1);  
+  tin->SetBranchStatus("d_lbar_eta", 1); 
+  tin->SetBranchStatus("d_lbar_phi", 1); 
+  tin->SetBranchStatus("d_nu_pt", 1);  
+  tin->SetBranchStatus("d_nu_eta", 1); 
+  tin->SetBranchStatus("d_nu_phi", 1); 
+  tin->SetBranchStatus("d_nu_m", 1);   
+  tin->SetBranchStatus("d_nubar_pt", 1);  
+  tin->SetBranchStatus("d_nubar_eta", 1); 
+  tin->SetBranchStatus("d_nubar_phi", 1); 
+  tin->SetBranchStatus("d_nubar_m", 1);   
+  
   Event evt;
   tin->SetBranchAddress("eventNumber", &evt.Info.EvtNum);
   tin->SetBranchAddress("runNumber", &evt.Info.RunNum);
