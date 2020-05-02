@@ -42,8 +42,8 @@ func main() {
 	nevts := eventLoop(*fname, *tname, *evtmax)
 
 	dt := time.Now().Sub(start)
-	dt_s := dt.Seconds()
-	dt_ms := dt_s / 1000
+	dt_ms := float64(dt) / float64(time.Millisecond)
+	dt_s := dt_ms / float64(1000)
 	nkevt := float64(nevts) / 1e3
 	fmt.Printf("%.1f ms/kEvt (%.1f s for %.0f kEvts)\n", dt_ms/nkevt, dt_s, nkevt)
 }
