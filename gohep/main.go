@@ -69,7 +69,7 @@ func eventLoop(fname, tname string, nmax int64) int64 {
 	rvars := readVariables(&e)
 
 	// Reader
-	r, err := rtree.NewReader(t, rvars, rtree.WithRange(1, nmax))
+	r, err := rtree.NewReader(t, rvars, rtree.WithRange(0, nmax))
 	if err != nil {
 		log.Fatalf("could not create tree reader: %+v", err)
 	}
