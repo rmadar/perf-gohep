@@ -7,7 +7,7 @@ import (
 	"os"
 	"runtime/pprof"
 	"time"
-	
+
 	"go-hep.org/x/hep/groot"
 	"go-hep.org/x/hep/groot/rtree"
 )
@@ -15,7 +15,7 @@ import (
 func main() {
 
 	start := time.Now()
-	
+
 	var (
 		ipath  = "/home/rmadar/cernbox/ATLAS/Analysis/SM-SpinCorr/data/inputs/root-files/"
 		fname  = flag.String("f", ipath+"MC16a.410472.PhPy8EG.DAOD_TOPQ1_truth.root", "input file name")
@@ -42,8 +42,8 @@ func main() {
 	nevts := eventLoop(*fname, *tname, *evtmax)
 
 	dt := time.Now().Sub(start)
-	dt_ms := float64(dt) / float64(time.Millisecond)
-	dt_s  := dt_ms / float64(1000)
+	dt_s := dt.Seconds()
+	dt_ms := dt_s / 1000
 	nkevt := float64(nevts) / 1e3
 	fmt.Printf("%.1f ms/kEvt (%.1f s for %.0f kEvts)\n", dt_ms/nkevt, dt_s, nkevt)
 }
@@ -67,20 +67,20 @@ func eventLoop(fname, tname string, nmax int64) int64 {
 	// Variables to read
 	var e Event
 	rvars := readVariables(&e)
-	
+
 	// Reader
-	r, err := rtree.NewReader(t, rvars, rtree.WithRange(1, nmax))
+	r, err := rtree.NewReader(t, rvars, rtree.WithRange(0, nmax))
 	if err != nil {
 		log.Fatalf("could not create tree reader: %+v", err)
 	}
 
 	// Event loop
-	ievt := int64(0)
+	var ievt int64
 	err = r.Read(func(ctx rtree.RCtx) error {
-		if ctx.Entry % 100000 == 0 { 
+		if ctx.Entry%100000 == 0 {
 			fmt.Printf("Processing event %v\n", ctx.Entry)
 		}
-		ievt += 1
+		ievt++
 		return nil
 	})
 
