@@ -22,13 +22,16 @@ In these test, fake data are generated, with 30 branches of either floats or sli
 
 ### Slices of size between 0 and 30
 
-**GOHEP with slices**
+**GOHEP**
  + [839f662](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662): 45.3 ms/kEvt (4.5 s for 100 kEvts)
  + [feb48b1](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1): 58.6 ms/kEvt (5.9 s for 100 kEvts)
 
 **ROOT**
- + to come.
+ + to come
 
 ### Floats
 
-To come.
+**GOHEP**
+
+ + [839f662](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662): 3.8 ms/kEvt (0.4 s for 100 kEvts)
+ + [feb48b1](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1): 4.7 ms/kEvt (0.5 s for 100 kEvts)
