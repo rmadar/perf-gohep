@@ -220,8 +220,8 @@ func (e *EventSlices) GenerateValues(n int32) {
 	e.Var28 = make([]float64, e.N)
 	e.Var29 = make([]float64, e.N)
 	e.Var30 = make([]float64, e.N)
-	
-	for i:=0 ; i<int(e.N) ; i++ {
+
+	for i := 0; i < int(e.N); i++ {
 		e.Var1[i] = rand.Float64()
 		e.Var2[i] = rand.Float64()
 		e.Var3[i] = rand.Float64()
