@@ -6,13 +6,20 @@ in order to compare performances of [go-hep](https://go-hep.org/) and [ROOT](htt
 
 ## Home-made data
 
-In these test, fake data are generated, with 30 branches of either floats or slices (slice size vary between 0 and `N`).
+In these test, fake data are generated, with 30 branches of either floats or slices (slice size vary between `1` and `n=30`).
 
 One can regenerate the fake data with:
 
 ```
 $> go run ./gen-data.go
 ```
+
+|   | floats  | slices  |
+|---|---|---|
+| ROOT branch  | x  | x  |
+| ROOT reader  | x  | x  |
+| go-hep [839f662](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | x | x |
+| go-hep [feb48b1](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | x | x |
 
 ### Slices of size between 0 and 30
 
