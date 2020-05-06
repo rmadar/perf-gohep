@@ -190,7 +190,7 @@ type EventSlices struct {
 
 // Generate random values for the 30 slices of EventSlices with a maximum size n.
 func (e *EventSlices) GenerateValues(n int32) {
-	e.N = rand.Int31n(n)
+	e.N = rand.Int31n(n-1) + 1
 
 	e.Var1 = make([]float64, e.N)
 	e.Var2 = make([]float64, e.N)
