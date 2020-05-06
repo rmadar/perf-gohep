@@ -13,7 +13,7 @@ three sums (involving all branches). One can regenerate the fake data with:
 $> go run ./gen-data.go
 ```
 
-The following table shows the time (in milliseconds per 10k events) for different codes, using the exact same input file,
+The following table shows the time (**milliseconds per 10k events**) for different codes, using the exact same input file,
 both for ROOT (left) and go-hep (middle), as well as the ratio between go-hep and the ROOT branch approach (right):
 
 <table>
