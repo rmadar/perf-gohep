@@ -14,29 +14,12 @@ One can regenerate the fake data with:
 $> go run ./gen-data.go
 ```
 
-|   | floats  | slices  |
-|---|---|---|
+| ms / kEvts  | floats  | slices  |
+|:---|---:|---:|
 | **ROOT branch**  | x  | 22 |
 | **ROOT reader**  | x  |  8 |
 | **go-hep** [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | 4.7 | 45 |
 | **go-hep** [`feb48b1`](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | 3.8 | 59 |
-
-### Slices of size between 0 and 30
-
-**GOHEP**
- + [839f662](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662): 45.3 ms/kEvt (4.5 s for 100 kEvts)
- + [feb48b1](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1): 58.6 ms/kEvt (5.9 s for 100 kEvts)
-
-**ROOT**
- + Branch: 22 ms/kEvt (2.2 s for 100 kEvts)
- + Reader: 8.2 ms/kEvt (0.82 s for 100 kEvts)
-
-### Floats
-
-**GOHEP**
-
- + [839f662](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662): 3.8 ms/kEvt (0.4 s for 100 kEvts)
- + [feb48b1](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1): 4.7 ms/kEvt (0.5 s for 100 kEvts)
 
 
 ## Realistic data 
