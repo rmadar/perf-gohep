@@ -1,6 +1,6 @@
 # Performances comparison: go-hep *v.s.* ROOT
 
-This repository hots a couple of small benchmark based on a `TTree` reading 
+This repository hosts a couple of small benchmark based on a `TTree` reading
 in order to compare performances of [go-hep](https://go-hep.org/) and [ROOT](https://root.cern.ch/).
 
 
@@ -19,6 +19,12 @@ In this test, 42 float branches are loaded for 720k events ([contact me](mailto:
 ## Home-made data
 
 In these test, fake data are generated, with 30 branches of either floats or slices (slice size vary between 0 and `N`).
+
+One can regenerate the fake data with:
+
+```
+$> go run ./gen-data.go
+```
 
 ### Slices of size between 0 and 30
 

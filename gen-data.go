@@ -1,3 +1,5 @@
+// +build ignore
+
 // Generate ROOT file with two different event models
 //  1. flat data
 //  2. array (slice) data
@@ -16,7 +18,7 @@ import (
 
 func main() {
 	var (
-		fname  = flag.String("f", "../data.root", "path to ROOT file to create")
+		fname  = flag.String("f", "homemade-data/data.root", "path to ROOT file to create")
 		evtmax = flag.Int64("n", 10000, "number of events to generate")
 	)
 	flag.Parse()
