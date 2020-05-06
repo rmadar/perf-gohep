@@ -15,7 +15,7 @@ $> go run ./gen-data.go
 ```
 
 The following table shows the time (in milliseconds per 10k events) for different codes, using the exact same input file,
-both for ROOT (left) and go-hep (right):
+both for ROOT (left) and go-hep (middle), as well as the ratio between go-hep and the ROOT branch approach (right):
 
 <table>
 <tr><th> ROOT </th><th> GO-HEP </th><th> go/branch </th></tr>
