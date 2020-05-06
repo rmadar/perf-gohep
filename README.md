@@ -18,7 +18,7 @@ The following table shows the time (in milliseconds per 10k events) for differen
 both for ROOT (left) and go-hep (right):
 
 <table>
-<tr><th> ROOT </th><th> GO-HEP </th></tr>
+<tr><th> ROOT </th><th> GO-HEP </th></tr> <th> go/branch </th></tr>
 <tr><td>
 
 | Setup | Floats | Slices |
@@ -33,6 +33,16 @@ both for ROOT (left) and go-hep (right):
 | [`nextcommit`](https://github.com/go-hep/hep/commit/) | x | x |
 | [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | 4.7 | 45 |
 | [`feb48b1`](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | 3.8 | 59 |
+
+</td></tr> 
+
+</td><td>
+
+| Setup | Floats | Slices |
+|:--|--:|--:|
+| [`nextcommit`](https://github.com/go-hep/hep/commit/) | x | x |
+| [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | x | 2.0 |
+| [`feb48b1`](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | x | 2.7 |
 
 </td></tr> </table>
 
