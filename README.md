@@ -14,25 +14,21 @@ One can regenerate the fake data with:
 $> go run ./gen-data.go
 ```
 
-The following table shows the time (in milliseconds per 10k events) for different codes, using the exact same input file, both for ROOT and go-hep:
-
-| ROOT | floats  | slices  |  | GO-HEP | floats  | slices |
-|:---|---:|---:|---|:---|---:|---:|
-| branch  | x  | 22 | | [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | 4.7 | 45 |   
-| reader  | x  |  8 | | [`feb48b1`](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | 3.8 | 59 |
+The following table shows the time (in milliseconds per 10k events) for different codes, using the exact same input file,
+both for ROOT (left) and go-hep (right):
 
 <table>
 <tr><th> ROOT </th><th> GO-HEP </th></tr>
 <tr><td>
 
-| setup | Floats | Slices |
+| Setup | Floats | Slices |
 |:--|--:|--:|
 | branch  | x  | 22 |
 | reader  | x  |  8 |
 
 </td><td>
 
-| setup | Floats | Slices |
+| Setup | Floats | Slices |
 |:--|--:|--:|
 | [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | 4.7 | 45 |
 | [`feb48b1`](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | 3.8 | 59 |
