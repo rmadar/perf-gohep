@@ -14,14 +14,12 @@ One can regenerate the fake data with:
 $> go run ./gen-data.go
 ```
 
-The following table shows the time in milli-second per 10k events for each of tried setups:
+The following table shows the time (in milliseconds per 10k events) for each of code, using the exact same input file:
 
-| | floats  | slices  |
-|:---|---:|---:|
-| **ROOT branch**  | x  | 22 |
-| **ROOT reader**  | x  |  8 |
-| **go-hep** [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | 4.7 | 45 |
-| **go-hep** [`feb48b1`](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | 3.8 | 59 |
+| ROOT | floats  | slices  |  | go-hep | floats  | slices |
+|:---|---:|---:|---|:---|---:|---:|
+| branch  | x  | 22 | | [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | 4.7 | 45 |   
+| reader  | x  |  8 | | [`feb48b1`](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | 3.8 | 59 |
 
 
 ## Realistic data 
