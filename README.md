@@ -14,7 +14,9 @@ One can regenerate the fake data with:
 $> go run ./gen-data.go
 ```
 
-| ms / kEvts  | floats  | slices  |
+The following table shows the time in milli-second per 10k events for each of tried setups:
+
+| | floats  | slices  |
 |:---|---:|---:|
 | **ROOT branch**  | x  | 22 |
 | **ROOT reader**  | x  |  8 |
