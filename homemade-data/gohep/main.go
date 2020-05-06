@@ -64,7 +64,7 @@ func eventLoop(fname, tname string, nmax int64) int64 {
 	t := o.(rtree.Tree)
 
 	// Event models
-	//var eF64 EventFloats
+	var eF64 EventFloats
 	var eF64s EventSlices
 
 	// Reader
