@@ -22,18 +22,20 @@ The following table shows the time (in milliseconds per 10k events) for differen
 | reader  | x  |  8 | | [`feb48b1`](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | 3.8 | 59 |
 
 <table>
-<tr><th>Table 1 Heading 1 </th><th>Table 1 Heading 2</th></tr>
+<tr><th> ROOT </th><th> GO-HEP </th></tr>
 <tr><td>
 
-|Table 1| Middle | Table 2|
-|--|--|--|
-|a| not b|and c |
+| setup | Floats | Slices |
+|:--|--:|--:|
+| branch  | x  | 22 |
+| reader  | x  |  8 |
 
 </td><td>
 
-|b|1|2|3| 
-|--|--|--|--|
-|a|s|d|f|
+| setup | Floats | Slices |
+|:--|--:|--:|
+| [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | 4.7 | 45 |
+| [`feb48b1`](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | 3.8 | 59 |
 
 </td></tr> </table>
 
