@@ -86,15 +86,19 @@ func eventLoopF64s(fname string, nmax int64) int64 {
 			fmt.Printf("Processing event %v\n", ctx.Entry)
 		}
 		
-		// Dummy some to use first element of all slices
-		_ = eF64s.Var1[0] + eF64s.Var2[0] + eF64s.Var3[0] + eF64s.Var4[0] + eF64s.Var4[0] +
-			eF64s.Var6[0] + eF64s.Var7[0] + eF64s.Var8[0] + eF64s.Var9[0] + eF64s.Var10[0]
-
-		_ = eF64s.Var11[0] + eF64s.Var12[0] + eF64s.Var13[0] + eF64s.Var14[0] + eF64s.Var14[0] +
-			eF64s.Var16[0] + eF64s.Var17[0] + eF64s.Var18[0] + eF64s.Var19[0] + eF64s.Var20[0]
-
-		_ = eF64s.Var21[0] + eF64s.Var22[0] + eF64s.Var23[0] + eF64s.Var24[0] + eF64s.Var24[0] +
-			eF64s.Var26[0] + eF64s.Var27[0] + eF64s.Var28[0] + eF64s.Var29[0] + eF64s.Var30[0]
+		// Dummy sum to use all elements of all slices
+		var x1, x2, x3 float64
+		for i := range eF64s.Var1 {
+			x1 += eF64s.Var1[i] + eF64s.Var2[i] + eF64s.Var3[i] + eF64s.Var4[i] + eF64s.Var4[i] +
+				eF64s.Var6[i] + eF64s.Var7[i] + eF64s.Var8[i] + eF64s.Var9[i] + eF64s.Var10[i]
+			
+			x2 += eF64s.Var11[i] + eF64s.Var12[i] + eF64s.Var13[i] + eF64s.Var14[i] + eF64s.Var14[i] +
+				eF64s.Var16[i] + eF64s.Var17[i] + eF64s.Var18[i] + eF64s.Var19[i] + eF64s.Var20[i]
+			
+			x3 += eF64s.Var21[i] + eF64s.Var22[i] + eF64s.Var23[i] + eF64s.Var24[i] + eF64s.Var24[i] +
+				eF64s.Var26[i] + eF64s.Var27[i] + eF64s.Var28[i] + eF64s.Var29[i] + eF64s.Var30[i]
+		}
+		_, _, _ = x1, x2, x3
 		
 		ievt++
 		return nil
@@ -136,7 +140,7 @@ func eventLoopF64(fname string, nmax int64) int64 {
 			fmt.Printf("Processing event %v\n", ctx.Entry)
 		}
 		
-		// Dummy some to use first element of all slices
+		// Dummy sum to use all elements
 		_ = eF64.Var1 + eF64.Var2 + eF64.Var3 + eF64.Var4 + eF64.Var4 +
 			eF64.Var6 + eF64.Var7 + eF64.Var8 + eF64.Var9 + eF64.Var10
 

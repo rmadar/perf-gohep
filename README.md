@@ -8,7 +8,7 @@ in order to compare performances of [go-hep](https://go-hep.org/) and [ROOT](htt
 
 In these test, fake data are generated, with 30 branches of either floats or slices
 (slice size varies between `1` and `n=30`). The test consists in loading all the branches and computing
-three sums (involving all branches). One can regenerate the fake data with:
+three sums (involving all values of all branches). One can regenerate the fake data with:
 ```
 $> go run ./gen-data.go
 ```
@@ -22,8 +22,8 @@ both for ROOT (left) and go-hep (middle), as well as the ratio between go-hep an
 
 | Method | Floats | Slices |
 |:--|--:|--:|
-| branch  | x  | 22 |
-| reader  | x  |  8 |
+| branch  | 2.4  | 23 |
+| reader  | 1.8  | 11 |
 
 </td><td>
 
@@ -38,8 +38,8 @@ both for ROOT (left) and go-hep (middle), as well as the ratio between go-hep an
 | go-hep commit | Floats | Slices |
 |:--|--:|--:|
 | [`nextcommit`](https://github.com/go-hep/hep/commit/) | x | x |
-| [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | x | 2.0 |
-| [`feb48b1`](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | x | 2.7 |
+| [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | 1.6 | 2.0 |
+| [`feb48b1`](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | 1.9 | 2.7 |
 
 </td></tr> </table>
 
