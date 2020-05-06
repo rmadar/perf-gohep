@@ -18,9 +18,10 @@ func main() {
 
 	var (
 		fname  = flag.String("f", "../data.root", "input file name")
-		tname  = flag.String("t", "F64", "input tree name")
+		format = flag.String("d", "F64s", "data format F64s/F64")
 		evtmax = flag.Int64("n", -1, "Maximum number of events")
 		doCPU  = flag.Bool("cpu", false, "enable CPU profiling")
+		nevts int64
 	)
 	flag.Parse()
 
@@ -38,8 +39,14 @@ func main() {
 		defer pprof.StopCPUProfile()
 	}
 
-	nevts := eventLoop(*fname, *tname, *evtmax)
+	if *format == "F64s" { 
+		nevts = eventLoopF64s(*fname, *evtmax)
+	}
 
+	if *format == "F64" { 
+		nevts = eventLoopF64(*fname, *evtmax)
+	}
+	
 	dt := time.Now().Sub(start)
 	dt_ms := float64(dt) / float64(time.Millisecond)
 	dt_s := dt_ms / float64(1000)
@@ -47,7 +54,7 @@ func main() {
 	fmt.Printf("%.1f ms/kEvt (%.1f s for %.0f kEvts)\n", dt_ms/nkevt, dt_s, nkevt)
 }
 
-func eventLoop(fname, tname string, nmax int64) int64 {
+func eventLoopF64s(fname string, nmax int64) int64 {
 
 	// Open file
 	f, err := groot.Open(fname)
@@ -57,24 +64,17 @@ func eventLoop(fname, tname string, nmax int64) int64 {
 	defer f.Close()
 
 	// Get the tree
-	o, err := f.Get(tname)
+	o, err := f.Get("F64s")
 	if err != nil {
 		log.Fatalf("could not retrieve ROOT tree: %+v", err)
 	}
 	t := o.(rtree.Tree)
 
-	// Event models
-	var eF64 EventFloats
+	// Event model
 	var eF64s EventSlices
 
 	// Reader
-	var r *rtree.Reader
-	if tname == "F64" {
-		r, err = rtree.NewReader(t, rtree.ReadVarsFromStruct(&eF64), rtree.WithRange(0, nmax))
-	}
-	if tname == "F64s" {
-		r, err = rtree.NewReader(t, rtree.ReadVarsFromStruct(&eF64s), rtree.WithRange(0, nmax))
-	}
+	r, err := rtree.NewReader(t, rtree.ReadVarsFromStruct(&eF64s), rtree.WithRange(0, nmax))
 	if err != nil {
 		log.Fatalf("could not create tree reader: %+v", err)
 	}
@@ -85,12 +85,74 @@ func eventLoop(fname, tname string, nmax int64) int64 {
 		if ctx.Entry%100000 == 0 {
 			fmt.Printf("Processing event %v\n", ctx.Entry)
 		}
+		
+		// Dummy some to use first element of all slices
+		_ = eF64s.Var1[0] + eF64s.Var2[0] + eF64s.Var3[0] + eF64s.Var4[0] + eF64s.Var4[0] +
+			eF64s.Var6[0] + eF64s.Var7[0] + eF64s.Var8[0] + eF64s.Var9[0] + eF64s.Var10[0]
+
+		_ = eF64s.Var11[0] + eF64s.Var12[0] + eF64s.Var13[0] + eF64s.Var14[0] + eF64s.Var14[0] +
+			eF64s.Var16[0] + eF64s.Var17[0] + eF64s.Var18[0] + eF64s.Var19[0] + eF64s.Var20[0]
+
+		_ = eF64s.Var21[0] + eF64s.Var22[0] + eF64s.Var23[0] + eF64s.Var24[0] + eF64s.Var24[0] +
+			eF64s.Var26[0] + eF64s.Var27[0] + eF64s.Var28[0] + eF64s.Var29[0] + eF64s.Var30[0]
+		
 		ievt++
 		return nil
 	})
 
 	return ievt
 }
+
+// Run the event loop for the float trees
+func eventLoopF64(fname string, nmax int64) int64 {
+
+	// Open file
+	f, err := groot.Open(fname)
+	if err != nil {
+		log.Fatalf("could not open ROOT file: %+v", err)
+	}
+	defer f.Close()
+
+	// Get the tree
+	o, err := f.Get("F64")
+	if err != nil {
+		log.Fatalf("could not retrieve ROOT tree: %+v", err)
+	}
+	t := o.(rtree.Tree)
+
+	// Event model
+	var eF64 EventFloats
+
+	// Reader
+	r, err := rtree.NewReader(t, rtree.ReadVarsFromStruct(&eF64), rtree.WithRange(0, nmax))
+	if err != nil {
+		log.Fatalf("could not create tree reader: %+v", err)
+	}
+
+	// Event loop
+	var ievt int64
+	err = r.Read(func(ctx rtree.RCtx) error {
+		if ctx.Entry%100000 == 0 {
+			fmt.Printf("Processing event %v\n", ctx.Entry)
+		}
+		
+		// Dummy some to use first element of all slices
+		_ = eF64.Var1 + eF64.Var2 + eF64.Var3 + eF64.Var4 + eF64.Var4 +
+			eF64.Var6 + eF64.Var7 + eF64.Var8 + eF64.Var9 + eF64.Var10
+
+		_ = eF64.Var11 + eF64.Var12 + eF64.Var13 + eF64.Var14 + eF64.Var14 +
+			eF64.Var16 + eF64.Var17 + eF64.Var18 + eF64.Var19 + eF64.Var20
+
+		_ = eF64.Var21 + eF64.Var22 + eF64.Var23 + eF64.Var24 + eF64.Var24 +
+			eF64.Var26 + eF64.Var27 + eF64.Var28 + eF64.Var29 + eF64.Var30
+		
+		ievt++
+		return nil
+	})
+
+	return ievt
+}
+
 
 // Input Event model made of 12 (flat) numbers
 type EventFloats struct {
