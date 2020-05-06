@@ -18,7 +18,7 @@ The following table shows the time (in milliseconds per 10k events) for differen
 both for ROOT (left) and go-hep (middle), as well as the ratio between go-hep and the ROOT branch approach (right):
 
 <table>
-<tr><th> ROOT </th><th> GO-HEP </th><th> go/branch </th></tr>
+<tr><th> Root </th><th> go-hep </th><th> go-hep / branch </th></tr>
 <tr><td>
 
 | Method | Floats | Slices |
