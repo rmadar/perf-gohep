@@ -7,9 +7,7 @@ package main
 
 import (
 	"flag"
-	//"fmt"
 	"log"
-	//"math"
 	"math/rand"
 
 	"go-hep.org/x/hep/groot"
@@ -87,7 +85,7 @@ func generateData(fname string, evtmax int64) {
 
 }
 
-// Input Event model made of 12 (flat) numbers
+// Event made of 30 numbers
 type EventFloats struct {
 	Var1  float64
 	Var2  float64
@@ -121,6 +119,7 @@ type EventFloats struct {
 	Var30 float64
 }
 
+// Generate random values for the 30 numbers of EventFloats
 func (e *EventFloats) GenerateValues() {
 	e.Var1 = rand.Float64()
 	e.Var2 = rand.Float64()
@@ -154,7 +153,7 @@ func (e *EventFloats) GenerateValues() {
 	e.Var30 = rand.Float64()
 }
 
-// Input event model made of 6 arrays of 2-elements
+// Event model made of 30 slices of a size N
 type EventSlices struct {
 	N     int32
 	Var1  []float64 `groot:"Var1[N]"`
@@ -189,6 +188,7 @@ type EventSlices struct {
 	Var30 []float64 `groot:"Var30[N]"`
 }
 
+// Generate random values for the 30 slices of EventSlices with a maximum size n.
 func (e *EventSlices) GenerateValues(n int32) {
 	e.N = rand.Int31n(n)
 
