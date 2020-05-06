@@ -21,14 +21,14 @@ both for ROOT (left) and go-hep (middle), as well as the ratio between go-hep an
 <tr><th> ROOT </th><th> GO-HEP </th><th> go/branch </th></tr>
 <tr><td>
 
-| Setup | Floats | Slices |
+| Method | Floats | Slices |
 |:--|--:|--:|
 | branch  | x  | 22 |
 | reader  | x  |  8 |
 
 </td><td>
 
-| Setup | Floats | Slices |
+| Commit | Floats | Slices |
 |:--|--:|--:|
 | [`nextcommit`](https://github.com/go-hep/hep/commit/) | x | x |
 | [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | 4.7 | 45 |
@@ -36,7 +36,7 @@ both for ROOT (left) and go-hep (middle), as well as the ratio between go-hep an
 
 </td><td>
 
-| Setup | Floats | Slices |
+| go-hep commit | Floats | Slices |
 |:--|--:|--:|
 | [`nextcommit`](https://github.com/go-hep/hep/commit/) | x | x |
 | [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | x | 2.0 |
