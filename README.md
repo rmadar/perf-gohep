@@ -30,6 +30,7 @@ both for ROOT (left) and go-hep (right):
 
 | Setup | Floats | Slices |
 |:--|--:|--:|
+| [`nextcommit`](https://github.com/go-hep/hep/commit/) | x | x |
 | [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | 4.7 | 45 |
 | [`feb48b1`](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | 3.8 | 59 |
 
