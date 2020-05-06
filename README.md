@@ -7,7 +7,8 @@ in order to compare performances of [go-hep](https://go-hep.org/) and [ROOT](htt
 ## Home-made data
 
 In these test, fake data are generated, with 30 branches of either floats or slices
-(slice size varies between `1` and `n=30`). One can regenerate the fake data with:
+(slice size varies between `1` and `n=30`). The test consists in loading all the branches and computing
+three sums (involving all branches). One can regenerate the fake data with:
 ```
 $> go run ./gen-data.go
 ```
