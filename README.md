@@ -29,7 +29,7 @@ both for ROOT (left) and go-hep (middle), as well as the ratio between go-hep an
 
 | Commit | Floats | Slices |
 |:--|--:|--:|
-| [`nextcommit`](https://github.com/go-hep/hep/commit/) | x | x |
+| [`b5f3896`](https://github.com/go-hep/hep/commit/b5f389640bd9b7bd567717dceda9f16ab9e2b6b2) | 1.2 | 12 |
 | [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | 3.8 | 45 |
 | [`feb48b1`](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | 4.7 | 59 |
 
@@ -37,7 +37,7 @@ both for ROOT (left) and go-hep (middle), as well as the ratio between go-hep an
 
 | go-hep commit | Floats | Slices |
 |:--|--:|--:|
-| [`nextcommit`](https://github.com/go-hep/hep/commit/) | x | x |
+| [`b5f3896`](https://github.com/go-hep/hep/commit/b5f389640bd9b7bd567717dceda9f16ab9e2b6b2) | 0.5 | 0.5 |
 | [`839f662`](https://github.com/go-hep/hep/commit/1f253e6bf631b7a947f17c08168272b81839f662) | 1.6 | 2.0 |
 | [`feb48b1`](https://github.com/go-hep/hep/commit/f6acb63617113ff72668b749065faab99feb48b1) | 1.9 | 2.7 |
 

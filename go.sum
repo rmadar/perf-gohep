@@ -117,6 +117,8 @@ go-hep.org/x/hep v0.26.1-0.20200505212143-031ccf5230a5 h1:MWoDggBAFiYUM42olkm8Fi
 go-hep.org/x/hep v0.26.1-0.20200505212143-031ccf5230a5/go.mod h1:YSbfu0+O5B6qBjs75VyoodkpJTkNL7AGvGb/Ps8NqSk=
 go-hep.org/x/hep v0.26.1-0.20200508083250-cbdf79db6e34 h1:c46BFa5O4BD1lXdgHi3O03k54AiU5u1p8/28Obe/Wds=
 go-hep.org/x/hep v0.26.1-0.20200508083250-cbdf79db6e34/go.mod h1:zS28ZIH/9eQX/yN93xqmAcxzRQQfkn/7vumDD47ZVhY=
+go-hep.org/x/hep v0.26.1-0.20200519131915-b5f389640bd9 h1:VAgrFiscVIkoeyNiSxCaU8u5KOBNz5KHU2r7oRQRrz4=
+go-hep.org/x/hep v0.26.1-0.20200519131915-b5f389640bd9/go.mod h1:zS28ZIH/9eQX/yN93xqmAcxzRQQfkn/7vumDD47ZVhY=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20190510104115-cbcb75029529/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
