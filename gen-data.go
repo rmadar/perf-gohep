@@ -16,7 +16,7 @@ import (
 
 func main() {
 	var (
-		fname  = flag.String("f", "homemade-data/data.root", "path to ROOT file to create")
+		fname  = flag.String("f", "toy-data/data.root", "path to ROOT file to create")
 		evtmax = flag.Int64("n", 10000, "number of events to generate")
 	)
 	flag.Parse()
