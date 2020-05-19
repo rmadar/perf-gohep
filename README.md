@@ -4,7 +4,7 @@ This repository hosts a couple of small benchmark based on a `TTree` reading
 in order to compare performances of [go-hep](https://go-hep.org/) and [ROOT](https://root.cern.ch/).
 
 
-## Home-made data
+## Toy data
 
 In these test, fake data are generated, with 30 branches of either floats or slices
 (slice size varies between `1` and `n=30`). The test consists in loading all the branches and computing
